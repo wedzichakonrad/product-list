@@ -1,0 +1,42 @@
+@import '../../style/variables/variables'
+
+@keyframes loader-spin
+  0%
+    transform: rotate(0)
+    
+  100%
+    transform: rotate(-360deg)
+
+
+.loader
+  +flex-center-center
+
+  &__inner
+    position: relative
+    width: 80px
+    height: 80px
+    background: $c-white
+    border-radius: 50%
+    animation: loader-spin both 1.4s infinite
+
+    &:before
+      content: ''
+      position: absolute
+      background: $c-background
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      margin: auto
+      width: 60px
+      height: 60px
+      border-radius: 50%
+      z-index: 1
+
+    &:after
+      content: ''
+      position: absolute
+      background: $c-button
+      width: 40px
+      height: 40px
+      border-radius: 100% 0 0 0      

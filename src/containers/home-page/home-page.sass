@@ -1,0 +1,35 @@
+@import '../../style/variables/variables'
+  
+.home-page
+  +flex-center
+  flex-direction: column
+
+  &__welcome-message, &__products-redirect
+    text-align: center
+
+  &__welcome-message
+    font-size: 48px
+
+  &__products-redirect
+    font-size: 32px
+    margin-top: 40px
+
+    button
+      margin-top: 40px
+      width: 240px
+      height: 60px
+      border-radius: $s-border-radius-rounded
+      background: $c-button
+      color: $c-white
+      font-weight: $s-weight-bold
+      font-size: $s-font-primary
+      cursor: pointer
+      border: 0
+
+  &__recommendation
+    font-size: 32px
+    margin-top: 40px
+
+  &__recommendation-list
+    +flex-center
+    flex-wrap: wrap

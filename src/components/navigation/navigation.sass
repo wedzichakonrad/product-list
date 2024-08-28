@@ -1,0 +1,51 @@
+@import '../../style/variables/variables'
+  
+.navigation
+  position: sticky
+  z-index: 1
+  top: 0
+  width: 100%
+  background: $c-navigation
+  padding: 20px 0
+
+  +smm
+    display: flex
+    align-items: center
+    height: $s-height-navigation
+
+  nav
+    +smm
+      margin-left: 40px
+
+  ul
+    +flex-center-center
+    flex-direction: column
+
+    +smm
+      flex-direction: row
+
+  &__title
+    margin: 20px 0
+    font-size: $s-font-navigation-title
+    font-weight: $s-weight-bold
+    text-align: center
+    color: $c-white
+
+    +smm
+      margin: 0 20px
+
+  &__item
+    margin: 10px 0
+    
+    +smm
+      margin: 10px
+
+    a
+      display: inline-block
+      width: 100%
+      text-decoration: none
+      cursor: pointer
+      color: $c-white
+
+      &:hover
+        text-decoration: underline

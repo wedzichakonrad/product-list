@@ -1,0 +1,30 @@
+const _fetchProducts = async ({ id, limit }) => {
+	const url = `https://fakestoreapi.com/products${id ? `/${id}` : ""}${
+		limit ? `?limit=${limit}` : ""
+	}`;
+
+	return await fetch(url)
+		.then((res) => res.json())
+		.then((data) => {
+			if (data) {
+				return data;
+			}
+		})
+		.catch((err) => console.log(err));
+};
+
+export const getProducts = async ({ setIsFetching, setData, id, limit }) => {
+	setIsFetching(true);
+	try {
+		const data = await _fetchProducts({ id, limit });
+		if (data) {
+			setData(data);
+		} else {
+			throw new Error("No data received");
+		}
+	} catch (err) {
+		console.error("Error fetching data:", err);
+	} finally {
+		setIsFetching(false);
+	}
+};

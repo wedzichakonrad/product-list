@@ -1,0 +1,13 @@
+@import '../../style/variables/variables'
+    
+.main-container
+    width: 100%
+    background: $c-background
+
+    &__content
+        // the 40px stands for navigation padding which is '20px 0' 
+        min-height: calc(100vh - $s-height-navigation - 40px)
+        padding: 80px 10px 
+
+        +xxl
+            margin: 0 120px 
