@@ -26,7 +26,7 @@ const ProductListElement = ({ title, image, price, id, liStyle }) => {
 						{cutProductTitle(title)}
 					</p>
 					<div className="product-list-element__price">
-						{formatPrice(price)} $
+						{formatPrice(price)}
 					</div>
 				</div>
 				<Overlay text={"Details"} />

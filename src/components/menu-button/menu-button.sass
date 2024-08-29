@@ -7,17 +7,19 @@
   cursor: pointer
   width: 48px
   height: 48px
+  min-width: 48px
+  min-height: 48px
   background: $c-button
   border-radius: $s-border-radius-rounded
   transition: background 0.2s
   margin: 0 20px
 
+  &:hover
+      background: $c-button-hover
+
   +smm
     display: none
-
-  &:hover
-      background: $c-primary
-
+    
   &__inner
       +flex-center-center
       width: 100%

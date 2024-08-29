@@ -21,8 +21,6 @@ const ProductDetails = ({ setProductDetails, productDetails }) => {
 		});
 	}, []);
 
-	console.log(productDetails);
-
 	const openImagePreview = () => {
 		setIsImagePreviewOpened(true);
 	};
@@ -56,7 +54,7 @@ const ProductDetails = ({ setProductDetails, productDetails }) => {
 								{productDetails.category}
 							</div>
 							<span className="product-details__price">
-								{formatPrice(productDetails.price)} $
+								{formatPrice(productDetails.price)}
 							</span>
 							<button className="product-details__buy-button">Buy</button>
 						</div>

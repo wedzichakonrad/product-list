@@ -6,32 +6,24 @@
   z-index: 1
 
   &__inner
-    position: relative
     +flex-between-center
+    position: relative
     height: 40px
     width: 100%
-    background: $c-navigation
+    background: $c-black
     padding: 20px 0
 
     +smm
       justify-content: initial
 
   &__nav
-    width: 100%
     position: absolute
-    transition: transform 0.7s
     top: 100%
     right: 100%
+    width: 100%
     min-height: calc(100vh - 80px)
-    background: $c-navigation
-
-    +smm
-      position: static
-      width: initial
-      margin-left: 12px
-      min-height: initial
-      background: none
-      transition: none
+    background: $c-black
+    transition: transform 0.7s
 
     &--active
       transform: translateX(100%)
@@ -43,35 +35,48 @@
       +smm
         display: flex
 
+    +smm
+      position: static
+      width: initial
+      margin-left: 12px
+      min-height: initial
+      background: none
+      transition: none
+
   &__title
     margin: 0 20px
-    font-size: $s-font-header
+    font-size: $s-font-primary
+    line-height: $s-font-primary
     font-weight: $s-weight-bold
-    text-align: center
     color: $c-white
+    text-align: center
+
+    +xsm
+      font-size: $s-font-header
+      line-height: $s-font-header
 
   &__item 
     +smm
       margin: 10px
 
     a
-      width: calc(100% - 20px)
       display: inline-block
+      width: calc(100% - 20px)
       text-decoration: none
-      cursor: pointer
       color: $c-white
-      padding: 10px
       font-size: $s-font-primary
       border-top: 1px solid $c-white
+      cursor: pointer
+      padding: 6px
+
+      &:hover
+        background: $c-white
+        color: $c-black
 
       +smm
         border-top: 0
         border-radius: $s-border-radius-rounded
         width: initial
-
-      &:hover
-        background: $c-white
-        color: $c-black
 
     &:last-child
       a

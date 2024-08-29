@@ -14,7 +14,7 @@ const HomePage = ({ previousProductDetails }) => {
 		<div className="home-page">
 			<h1 className="home-page__welcome-message">Welcome to our store!</h1>
 			<div className="home-page__products-redirect">
-				<p>Click below, to see what we have to offer...</p>
+				<p>Click below to see what we have to offer...</p>
 				<button onClick={onGoToStoreButtonClick}>Go to store</button>
 			</div>
 			{previousProductDetails && (

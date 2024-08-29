@@ -25,7 +25,7 @@ export const getProducts = async ({ setIsFetching, setData, id, limit }) => {
 			throw new Error("No data received");
 		}
 	} catch (err) {
-		console.error("Error fetching data:", err);
+		throw new Error(`An error occured ${err}`);
 	} finally {
 		setIsFetching(false);
 	}

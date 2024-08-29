@@ -13,3 +13,5 @@ export const routePaths = {
 		createUrl: (id) => `/products/${id}/details`,
 	},
 };
+
+export const currency = "$";

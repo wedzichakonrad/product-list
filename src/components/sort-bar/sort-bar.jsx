@@ -50,13 +50,17 @@ const SortBar = ({ setProductsList, getProductsList }) => {
 
 	return (
 		<div className="sort-bar">
-			<div>
+			<div className="sort-bar__text">
 				<span>Sort by:</span>
 			</div>
-			<select onChange={onSortChange}>
+			<select className="sort-bar__select" onChange={onSortChange}>
 				{sortOptions.map((option, index) => {
 					return (
-						<option key={`${option.value}-${index}`} value={option.value}>
+						<option
+							className="sort-bar__option"
+							key={`${option.value}-${index}`}
+							value={option.value}
+						>
 							{option.name}
 						</option>
 					);

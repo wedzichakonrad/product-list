@@ -1,3 +1,5 @@
+import { currency } from "../utils/utils";
+
 export const cutProductTitle = (title) => {
 	const maxCharactersCount = 30;
 
@@ -18,5 +20,5 @@ export const extractIdFromPath = (pathName) => {
 export const formatPrice = (price) => {
 	const numberOfDigits = 2;
 	const formattedNumber = price.toFixed(numberOfDigits);
-	return formattedNumber.replace(".", ",");
+	return `${formattedNumber.replace(".", ",")} ${currency}`;
 };

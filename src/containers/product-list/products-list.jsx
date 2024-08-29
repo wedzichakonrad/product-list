@@ -28,7 +28,7 @@ const ProductsList = () => {
 			{isFetching ? (
 				<Loader />
 			) : (
-				<ul>
+				<ul className="products-list__list">
 					{productsList?.map((product, index) => (
 						<ProductListElement
 							key={`${product.id}_${index}`}

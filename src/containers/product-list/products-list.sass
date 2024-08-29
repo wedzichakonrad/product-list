@@ -14,14 +14,17 @@
     +flex-between-center
     flex-wrap: wrap
 
-  .products-list__header
+  &__header
     font-size: $s-font-header
     font-weight: $s-weight-bold
 
-  ul
+  &__list
     +flex-center
     flex-wrap: wrap
     margin-top: 40px
 
-    li
+    .product-list-element
       animation: products-slide 0.4s forwards linear
+
+  .loader
+    margin-top: 80px

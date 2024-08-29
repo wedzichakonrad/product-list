@@ -13,6 +13,9 @@
     width: calc(100vw - 32px)
     height: calc(100vh - 240px)
 
+    img
+      object-fit: contain 
+
     +xsm
       margin: 140px 40px 60px 40px
       width: calc(100vw - 80px)
@@ -22,9 +25,6 @@
       margin: 140px 100px 60px 100px
       width: calc(100vw - 200px)
       height: calc(100vh - 200px)
-
-    img
-      object-fit: contain 
 
   &__close-button
     position: fixed
@@ -43,7 +43,7 @@
       height: 36px
       cursor: pointer
       
-      &:before,&:after
+      &:before, &:after
         position: absolute
         content: ''
         width: 36px
