@@ -1,6 +1,7 @@
 @import '../../style/variables/variables'
   
 .home-page
+  position: relative
   +flex-center
   flex-direction: column
 
@@ -8,10 +9,13 @@
     text-align: center
 
   &__welcome-message
-    font-size: 48px
+    font-size: $s-font-main-header
+    line-height:  $s-font-main-header
+    font-weight: $s-weight-bold
+    margin-top: 60px
 
   &__products-redirect
-    font-size: 32px
+    font-size: $s-font-primary
     margin-top: 40px
 
     button
@@ -19,17 +23,16 @@
       width: 240px
       height: 60px
       border-radius: $s-border-radius-rounded
-      background: $c-button
-      color: $c-white
-      font-weight: $s-weight-bold
-      font-size: $s-font-primary
-      cursor: pointer
-      border: 0
+      +button
 
   &__recommendation
-    font-size: 32px
+    font-size: $s-font-primary
     margin-top: 40px
 
   &__recommendation-list
     +flex-center
     flex-wrap: wrap
+    margin-top: 24px
+
+  .loader
+    margin-top: 100px

@@ -3,21 +3,28 @@ import "./products-list.sass";
 import { getProducts } from "../../api/get-products";
 import Loader from "../../components/loader/loader";
 import ProductListElement from "../../components/product-list-element/product-list-element";
-import FilterBar from "../../components/filter-bar/filter-bar";
+import SortBar from "../../components/sort-bar/sort-bar";
 
 const ProductsList = () => {
 	const [productsList, setProductsList] = useState([]);
 	const [isFetching, setIsFetching] = useState(false);
 
-	useEffect(() => {
+	const getProductsList = () =>
 		getProducts({ setData: setProductsList, setIsFetching });
+
+	useEffect(() => {
+		getProductsList();
 	}, []);
 
-	console.log(productsList);
 	return (
 		<div className="products-list">
-			<FilterBar />
-			<header>Products</header>
+			<div className="products-list__top-bar">
+				<span className="products-list__header">Products</span>
+				<SortBar
+					setProductsList={setProductsList}
+					getProductsList={getProductsList}
+				/>
+			</div>
 			{isFetching ? (
 				<Loader />
 			) : (
@@ -29,6 +36,7 @@ const ProductsList = () => {
 							price={product.price}
 							image={product.image}
 							id={product.id}
+							liStyle={{ opacity: 0, animationDelay: `${(index + 1) * 50}ms` }}
 						/>
 					))}
 				</ul>

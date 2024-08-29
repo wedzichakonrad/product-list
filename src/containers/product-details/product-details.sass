@@ -1,13 +1,101 @@
+@import '../../style/variables/variables'
+  
 .product-details
+  width: 100%
+  margin: 0 auto
 
-  &__inner
+  &__top-inner
     display: flex
+    flex-direction: column
+
+    +smm
+      flex-direction: initial
 
   &__img-wrapper
-    width: 500px
-    height: 500px
+    position: relative
+    width: 240px
+    height: 240px
+    margin: 0 auto
+    background: $c-white
+    cursor: pointer
+
+    &:hover
+      .overlay
+        display: block
+
+    +smm
+      height: 460px
 
     img
-      width: 100%
-      height: 100%
       object-fit: contain
+
+  &__details-wrapper
+    display: flex
+    flex-direction: column
+    font-size: $s-font-primary
+    margin: 40px auto
+
+    +smm
+      margin: 0 0 0 20px
+
+  &__img-wrapper, &__details-wrapper
+    +smm
+      width: 50%
+
+  &__title, &__rating, &__category, &__price
+    text-align: center
+
+    +smm
+      text-align: right
+
+  &__title
+    font-weight: $s-weight-bold
+
+  &__rating
+    font-size: $s-font-primary
+    margin-top: 20px
+
+  &__rating-rate    
+    position: relative
+
+    &:before
+      content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 10 24 10 17 15 20 23 12 18 4 23 7 15 0 10 9 10 12 2" fill="currentColor"/></svg>')
+      position: absolute
+      right: calc(100% + 10px)
+
+  &__rating-count
+    margin-left: 10px
+
+  &__category
+    font-size: $s-font-secondary
+    margin: 20px 0
+
+    span
+      font-weight: $s-weight-bold
+
+  &__price
+    +smm
+      margin: auto 0 0 auto
+
+  &__buy-button
+    +button
+    border-radius: $s-border-radius-rounded
+    width: 200px
+    height: 60px
+    margin: 20px auto 0 auto
+
+    +smm
+      margin: 20px 0 0 auto
+
+  &__bottom-inner
+     margin-top: 100px
+
+  &__description-header
+    font-size: $s-font-primary
+    font-weight: $s-weight-bold
+    margin-bottom: 40px
+    text-align: left
+
+  &__description
+     margin-top: 40px
+     font-size: $s-font-description

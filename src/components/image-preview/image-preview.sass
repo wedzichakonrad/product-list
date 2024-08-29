@@ -1,0 +1,68 @@
+@import '../../style/variables/variables'
+  
+.image-preview
+  position: fixed
+  top: 0
+  left: 0
+
+  &__img-wrapper
+    position: absolute
+    z-index: 1
+    $c-background: $c-white
+    margin: 120px 8px 120px 8px 
+    width: calc(100vw - 32px)
+    height: calc(100vh - 240px)
+
+    +xsm
+      margin: 140px 40px 60px 40px
+      width: calc(100vw - 80px)
+      height: calc(100vh - 200px)
+
+    +mdm
+      margin: 140px 100px 60px 100px
+      width: calc(100vw - 200px)
+      height: calc(100vh - 200px)
+
+    img
+      object-fit: contain 
+
+  &__close-button
+    position: fixed
+    right: 20px
+    top: 96px
+    z-index: 4
+
+    +mdm
+      right: 40px
+
+    button
+      position: relative
+      border: none
+      background: none
+      width: 36px
+      height: 36px
+      cursor: pointer
+      
+      &:before,&:after
+        position: absolute
+        content: ''
+        width: 36px
+        height: 4px
+        left: 0
+        top: 16px
+        background: $c-white
+
+      &:before
+        transform: rotate(45deg)
+
+      &:after
+        transform: rotate(-45deg)
+
+  &__backdrop
+    position: absolute
+    top: 0
+    left: 0
+    background: $c-black
+    opacity: 0.5
+    width: 100vw
+    height: 100vh

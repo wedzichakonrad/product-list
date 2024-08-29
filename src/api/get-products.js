@@ -1,5 +1,7 @@
+const baseUrl = "https://fakestoreapi.com/products";
+
 const _fetchProducts = async ({ id, limit }) => {
-	const url = `https://fakestoreapi.com/products${id ? `/${id}` : ""}${
+	const url = `${baseUrl}${id ? `/${id}` : ""}${
 		limit ? `?limit=${limit}` : ""
 	}`;
 

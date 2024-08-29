@@ -5,9 +5,11 @@
     background: $c-background
 
     &__content
-        // the 40px stands for navigation padding which is '20px 0' 
-        min-height: calc(100vh - $s-height-navigation - 40px)
-        padding: 80px 10px 
+        min-height: calc(100vh - 320px)
+        padding: 80px 20px 
+
+        +mdm
+            margin: 0 120px 
 
         +xxl
-            margin: 0 120px 
+            margin: 0 360px 

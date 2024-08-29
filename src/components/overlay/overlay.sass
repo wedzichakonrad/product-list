@@ -1,0 +1,21 @@
+@import "../../style/variables/variables"
+  
+.overlay
+  display: none
+  position: absolute
+  top: 0
+  right: 0
+  font-size: $s-font-secondary
+  
+  &__inner
+    +flex-center-center
+    height: 80px
+    width: 72px
+    background: $c-button
+    border-radius: 0 16px 0 80px
+
+    span
+      display: inline-block
+      color: $c-white
+      font-weight: $s-weight-bold
+      transform: rotate(45deg)

@@ -1,10 +1,27 @@
 @import '../../style/variables/variables'
   
+@keyframes products-slide
+  from
+    opacity: 0
+    transform: translateY(-32px)
+
+  to
+    opacity: 1
+    transform: translateY(0)
+
 .products-list
-  header
+  &__top-bar
+    +flex-between-center
+    flex-wrap: wrap
+
+  .products-list__header
     font-size: $s-font-header
+    font-weight: $s-weight-bold
 
   ul
     +flex-center
     flex-wrap: wrap
     margin-top: 40px
+
+    li
+      animation: products-slide 0.4s forwards linear

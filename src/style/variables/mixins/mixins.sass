@@ -13,3 +13,15 @@
     display: flex
     justify-content: space-between
     align-items: center
+
+@mixin button
+    background-color: $c-button
+    color: $c-white
+    font-weight: $s-weight-bold
+    font-size: $s-font-primary
+    cursor: pointer
+    border: 0
+    transition: background-color 0.4s
+
+    &:hover
+        background-color: $c-button-hover

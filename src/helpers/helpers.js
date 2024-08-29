@@ -14,3 +14,9 @@ export const extractIdFromPath = (pathName) => {
 
 	return match ? match[1] : null;
 };
+
+export const formatPrice = (price) => {
+	const numberOfDigits = 2;
+	const formattedNumber = price.toFixed(numberOfDigits);
+	return formattedNumber.replace(".", ",");
+};

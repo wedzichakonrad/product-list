@@ -2,50 +2,80 @@
   
 .navigation
   position: sticky
-  z-index: 1
   top: 0
-  width: 100%
-  background: $c-navigation
-  padding: 20px 0
+  z-index: 1
 
-  +smm
-    display: flex
-    align-items: center
-    height: $s-height-navigation
-
-  nav
-    +smm
-      margin-left: 40px
-
-  ul
-    +flex-center-center
-    flex-direction: column
+  &__inner
+    position: relative
+    +flex-between-center
+    height: 40px
+    width: 100%
+    background: $c-navigation
+    padding: 20px 0
 
     +smm
-      flex-direction: row
+      justify-content: initial
+
+  &__nav
+    width: 100%
+    position: absolute
+    transition: transform 0.7s
+    top: 100%
+    right: 100%
+    min-height: calc(100vh - 80px)
+    background: $c-navigation
+
+    +smm
+      position: static
+      width: initial
+      margin-left: 12px
+      min-height: initial
+      background: none
+      transition: none
+
+    &--active
+      transform: translateX(100%)
+
+      +smm
+        transform: translateX(0)
+
+    ul
+      +smm
+        display: flex
 
   &__title
-    margin: 20px 0
-    font-size: $s-font-navigation-title
+    margin: 0 20px
+    font-size: $s-font-header
     font-weight: $s-weight-bold
     text-align: center
     color: $c-white
 
-    +smm
-      margin: 0 20px
-
-  &__item
-    margin: 10px 0
-    
+  &__item 
     +smm
       margin: 10px
 
     a
+      width: calc(100% - 20px)
       display: inline-block
-      width: 100%
       text-decoration: none
       cursor: pointer
       color: $c-white
+      padding: 10px
+      font-size: $s-font-primary
+      border-top: 1px solid $c-white
+
+      +smm
+        border-top: 0
+        border-radius: $s-border-radius-rounded
+        width: initial
 
       &:hover
-        text-decoration: underline
+        background: $c-white
+        color: $c-black
+
+    &:last-child
+      a
+        border-bottom: 1px solid $c-white
+
+        +smm
+          border-bottom: 0

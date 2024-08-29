@@ -1,0 +1,67 @@
+@import '../../style/variables/variables'
+
+.previous-details-redirect
+  position: fixed
+  top: 40vh
+  left: 0
+
+  &:hover
+    .previous-details-redirect
+      &__inner
+        transform: translateX(220px)
+
+      &__arrow
+        transform: rotate(180deg)
+
+  &__inner
+    position: relative
+    height: 200px
+    width: 40px
+    background: $c-button
+    cursor: pointer
+    color: $c-white
+    border-radius: 0 $s-border-radius-rounded $s-border-radius-rounded 0
+    text-align: center
+    transition: transform 1s
+    
+  &__content
+    +flex-center-center
+    position: absolute
+    right: 100%
+    flex-direction: column
+    height: calc(100% - 20px)
+    width: 200px
+    background: $c-button
+    padding: 10px
+
+  &__question, &__product-title
+    margin: 10px 0
+    font-weight: $s-weight-bold
+
+  &__img-wrapper
+    width: 48px
+    height: 48px
+
+    img
+      width: 100%
+      height: 100%
+
+  &__arrow
+    position: absolute
+    border-top: 16px solid transparent
+    border-bottom: 16px solid transparent
+    width: 0
+    height: 0
+    top: 0
+    bottom: 0
+    right: 14px
+    margin: auto 0
+    border-left: 16px solid $c-white
+
+  &__line-break
+    display: block
+    position: absolute
+    height: 100%
+    top: 0
+    right: 38px 
+    border-left: 1px solid $c-background
