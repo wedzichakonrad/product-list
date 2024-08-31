@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useLocation } from "react-router";
 import "./product-details.sass";
 import Loader from "../../components/loader/loader";
@@ -6,9 +6,13 @@ import { extractIdFromPath, formatPrice } from "../../helpers/helpers";
 import { getProducts } from "../../api/get-products";
 import ImagePreview from "../../components/image-preview/image-preview";
 import Overlay from "../../components/overlay/overlay";
+import { ProductDetailsContext } from "../main-container/main-container";
 
-const ProductDetails = ({ setProductDetails, productDetails }) => {
+const ProductDetails = () => {
 	const location = useLocation();
+	const { productDetails, setProductDetails } = useContext(
+		ProductDetailsContext
+	);
 	const [isFetching, setIsFetching] = useState(true);
 	const [isImagePreviewOpened, setIsImagePreviewOpened] = useState(false);
 	const productId = extractIdFromPath(location.pathname);
