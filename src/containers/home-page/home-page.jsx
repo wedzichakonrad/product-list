@@ -1,10 +1,13 @@
 import "./home-page.sass";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { routePaths } from "../../utils/utils";
 import PreviousDetailsRedirect from "../../components/previous-details-redirect/previous-details-redirect";
+import { ProductDetailsContext } from "../main-container/main-container";
 
-const HomePage = ({ previousProductDetails }) => {
+const HomePage = () => {
 	const navigate = useNavigate();
+	const { productDetails } = useContext(ProductDetailsContext);
 
 	const onGoToStoreButtonClick = () => {
 		navigate(routePaths.productList.path);
@@ -17,10 +20,8 @@ const HomePage = ({ previousProductDetails }) => {
 				<p>Click below to see what we have to offer...</p>
 				<button onClick={onGoToStoreButtonClick}>Go to store</button>
 			</div>
-			{previousProductDetails && (
-				<PreviousDetailsRedirect
-					previousProductDetails={previousProductDetails}
-				/>
+			{productDetails && (
+				<PreviousDetailsRedirect previousProductDetails={productDetails} />
 			)}
 		</div>
 	);
