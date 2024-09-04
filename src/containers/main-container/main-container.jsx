@@ -26,12 +26,14 @@ const MainContainer = () => {
 							path={routePaths.productDetails.path}
 							element={<ProductDetails />}
 						/>
-						<Route
-							path={routePaths.productList.path}
-							element={<ProductsList />}
-						/>
 					</Routes>
 				</ProductDetailsContext.Provider>
+				<Routes>
+					<Route
+						path={routePaths.productList.path}
+						element={<ProductsList />}
+					/>
+				</Routes>
 			</main>
 			<Footer />
 		</div>
