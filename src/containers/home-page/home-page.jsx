@@ -1,13 +1,12 @@
 import "./home-page.sass";
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { routePaths } from "../../utils/utils";
 import PreviousDetailsRedirect from "../../components/previous-details-redirect/previous-details-redirect";
-import { ProductDetailsContext } from "../main-container/main-container";
+import {useProductDetails} from "../../providers/product-details-provider";
 
 const HomePage = () => {
 	const navigate = useNavigate();
-	const { productDetails } = useContext(ProductDetailsContext);
+	const { productDetails } = useProductDetails();
 
 	const onGoToStoreButtonClick = () => {
 		navigate(routePaths.productList.path);
