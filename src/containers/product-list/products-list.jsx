@@ -6,11 +6,12 @@ import ProductListElement from "../../components/product-list-element/product-li
 import SortBar from "../../components/sort-bar/sort-bar";
 
 const ProductsList = () => {
-	const [productsList, setProductsList] = useState([]);
+	const [_productsList, _setProductsList] = useState([]);
 	const [isFetching, setIsFetching] = useState(false);
 
-	const getProductsList = () =>
-		getProducts({ setData: setProductsList, setIsFetching });
+	const getProductsList = () => {
+		getProducts({ setData: _setProductsList, setIsFetching });
+	}
 
 	useEffect(() => {
 		getProductsList();
@@ -21,15 +22,15 @@ const ProductsList = () => {
 			<div className="products-list__top-bar">
 				<span className="products-list__header">Products</span>
 				<SortBar
-					setProductsList={setProductsList}
+					setProductsList={_setProductsList}
 					getProductsList={getProductsList}
 				/>
 			</div>
-			{isFetching ? (
+			{!isFetching && _productsList.length === 0 ? 'No Data' : isFetching ? (
 				<Loader />
 			) : (
 				<ul className="products-list__list">
-					{productsList?.map((product, index) => (
+					{_productsList?.map((product, index) => (
 						<ProductListElement
 							key={`${product.id}_${index}`}
 							title={product.title}
